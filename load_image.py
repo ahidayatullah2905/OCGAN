@@ -54,14 +54,14 @@ def load_test_images(fnames, lbl, batch_size, img_wd, img_ht, ctx, noisevar=0.2,
 	if noisevar>0:
 	   		img_arr_in, img_arr_out = [croppedimg+mx.random.normal(0, noisevar , croppedimg.shape),
 									   croppedimg]
-		else:
+	else:
 				img_arr_in, img_arr_out = [croppedimg, croppedimg]
 	img_arr_in, img_arr_out = [nd.transpose(img_arr_in, (2, 0, 1)),
 								   nd.transpose(img_arr_out, (2, 0, 1))]
-		img_arr_in, img_arr_out = [img_arr_in.reshape((1,) + img_arr_in.shape),
+	img_arr_in, img_arr_out = [img_arr_in.reshape((1,) + img_arr_in.shape),
 								   img_arr_out.reshape((1,) + img_arr_out.shape)]
-		img_in_list.append(img_arr_out if is_reversed else img_arr_in)
-		img_out_list.append(img_arr_in if is_reversed else img_arr_out)
+	img_in_list.append(img_arr_out if is_reversed else img_arr_in)
+	img_out_list.append(img_arr_in if is_reversed else img_arr_out)
 
 	tempdata = [nd.concat(*img_in_list, dim=0), nd.concat(* img_out_list, dim=0)]
 	templbl = mx.nd.array(lbl)
