@@ -1,5 +1,5 @@
-import options
-import TestNovelty
+import OCGAN.options
+import OCGAN.TestNovelty
 import numpy as np
 import os
 import random
