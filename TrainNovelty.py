@@ -14,17 +14,17 @@ from mxnet import autograd
 import numpy as np
 import random
 from random import shuffle
-import dataloaderiter as dload
-import load_image
-import visual
-import models
+import OCGAN.dataloaderiter as dload
+import OCGAN.load_image
+import OCGAN.visual
+import OCGAN.models
 from datetime import datetime
 import time
 import logging
 import argparse
-import models
-import options
-import andgan
+import OCGAN.models
+import OCGAN.options
+import OCGAN.andgan
 
 
 def plotloss(loss_vec, fname):
